@@ -1,0 +1,57 @@
+.navbar {
+    width: 100%;
+    background-color: var(--color-black);
+    padding: 1rem 1.5rem;
+    border-bottom: 0.3px solid var(--white);
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    /*set margin on divs below nav, nav eats content below it*/
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.nav-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-right .wishlist,
+            .cart{
+    color: white;
+}
+
+.nav-heading{
+  font-size: 1.5rem;
+}
+
+.nav-btn{
+  padding: 0.4rem 1.2rem;
+  background-color: var(--color-primary);
+}
+.nav-btn.logout{
+  background-color: var(--color-logout);
+}
+.nav-btn:hover{
+  cursor: pointer;
+}
+.nav-input
+{ 
+  width: 40%;
+  padding: 0.5rem 1.5rem;
+  color: var(--color-black);
+}
+
+/* Input and its placeholder must have matching font styles*/
+input,
+input::-webkit-input-placeholder{
+    font-size: normal;
+}

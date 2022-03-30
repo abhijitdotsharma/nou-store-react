@@ -1,0 +1,78 @@
+.landing-img{
+    width:100%;/*will change later*/
+    margin-bottom: 5rem;/*will change later*/
+}
+.landing-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* category */
+.category{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1.4rem;
+}
+.category-heading{
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 1rem;
+}
+.category-heading span{
+    color: var(--color-primary);
+}
+
+.category-images{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.category-image{
+    height: 15rem;
+    width: 17rem;
+    padding-bottom: 0.5rem;
+}
+.category-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*new arrival card*/
+.new-arrival-card{
+    margin: auto;
+    margin-top: 2rem;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    /*used margin auto on content div*/
+    align-items: center;
+}
+
+.new-arrival-image{
+    width: 30%;
+}
+
+.new-arrival-image img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.new-arrival-content{
+    margin: 0 auto;
+}
+
+.new-arrival-content a{
+    border: 0.5px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.5rem 2rem;
+}
+
+.new-arrival-content a:hover{
+    border-color: var(--color-black);
+}
