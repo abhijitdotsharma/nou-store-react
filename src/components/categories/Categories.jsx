@@ -1,4 +1,5 @@
 // will go to product-page on button click
+import {Link} from "react-router-dom";
 import "./categories.css"
 export default function Categories() {
     return (
@@ -6,24 +7,24 @@ export default function Categories() {
             <h3 class="category-heading">CHOOSE YOUR <span>POISON</span></h3>
             <div class="category-images">
                 <div class="category-image">
-                    <a href="./files/product-page.html">
+                    <Link to="/products">
                         <img src="https://picsum.photos/200" alt="category 1" />
-                    </a>
+                    </Link>
                 </div>
                 <div class="category-image">
-                    <a href="./files/product-page.html">
-                        <img src="https://picsum.photos/200" alt="category 2" />
-                    </a>
+                    <Link to="/products">
+                        <img src="https://picsum.photos/200" alt="category 1" />
+                    </Link>
                 </div>
                 <div class="category-image">
-                    <a href="./files/product-page.html">
-                        <img src="https://picsum.photos/200" alt="category 3" />
-                    </a>
+                    <Link to="/products">
+                        <img src="https://picsum.photos/200" alt="category 1" />
+                    </Link>
                 </div>
                 <div class="category-image">
-                    <a href="./files/product-page.html">
-                        <img src="https://picsum.photos/200" alt="category 4" />
-                    </a>
+                    <Link to="/products">
+                        <img src="https://picsum.photos/200" alt="category 1" />
+                    </Link>
                 </div>
             </div>
         </section>
