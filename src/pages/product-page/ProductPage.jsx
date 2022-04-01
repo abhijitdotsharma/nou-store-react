@@ -1,11 +1,11 @@
 import {Link} from "react-router-dom";
+import { Filter, NavigationTop, Products } from "../../components";
 export default function ProductPage(){
     return(
         <div>
-            <h1>I am product page</h1>
-            <Link to="/">
-                <button>Back to Home</button>
-            </Link>
+            <NavigationTop />
+            <Filter />
+            <Products />
         </div>
     )
 }
