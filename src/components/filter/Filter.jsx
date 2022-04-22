@@ -47,19 +47,19 @@ export default function Filter() {
                     <h3>Rating</h3>
                     <label class="block" for="">
                         <input class="vertical-align-radio" type="radio" name="" id="" />
-                        4 stars & above
+                        4 stars and above
                     </label>
                     <label class="block" for="">
                         <input class="vertical-align-radio" type="radio" name="" id="" />
-                        3 stars & above
+                        3 stars and above
                     </label>
                     <label class="block" for="">
                         <input class="vertical-align-radio" type="radio" name="" id="" />
-                        2 stars & above
+                        2 stars and above
                     </label>
                     <label class="block" for="">
                         <input class="vertical-align-radio" type="radio" name="" id="" />
-                        1 stars & above
+                        1 stars and above
                     </label>
                 </div>
 
