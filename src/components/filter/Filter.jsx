@@ -4,9 +4,6 @@ export default function Filter() {
     return (
         <aside class="filter-wrapper">
             <div class="filter-container">
-                <Link to="/">
-                    <button>Back to Home</button>
-                </Link>
                 <div class="filter">
                     <h3>Filter</h3>
                     <span>Clear</span>
