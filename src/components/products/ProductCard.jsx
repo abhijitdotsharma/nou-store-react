@@ -1,27 +1,47 @@
 //I will take a product detail prop from Products.jsx and render is beautifully
-import { useState } from "react";
 
 const ProductCard = ({ product }) => {
+    // photo:
+    // title:
+    // author:
+    // price:
+    // categoryName:
 
     return (
         <>
             <div className="card">
-                <div className="card-image">
+                <div className="card__image">
                     <img src={`${product.photo}`} alt="some pic" />
-                    <span className="card-badge">Limited</span>
+                    <span className="card__badge">Limited</span>
                 </div>
-                <div className="card-info">
-                    <div className="card-title">
+                {/* <div className="card__info">
+                    <div className="card__title">
                         <div>
-                            <h3>Men's Slim Fit Shirt</h3>
-                            <small>Calvin Klein</small>
+                            <h4 className="card__heading">{product.title}</h4>
+                            <small className="card__brand">{product.author}</small>
+                            <small className="card__rating">{product.rating}<i class="fal fa-star"></i></small>
                         </div>
                         <i className="far fa-heart"></i>
                     </div>
-                    <div className="card-price">
-                        <p className="disc-price">{product.price}</p>
-                        <p className="og-price">YYY</p>
-                        <p className="disc-percent">(75% OFF)</p>
+                    <div className="card__price">
+                        <p className="price__present">{product.price}</p>
+                        <p className="price__original">YYY</p>
+                        <p className="price__discount">75%</p>
+                    </div>
+                </div> */}
+                <div className="card__info">
+                    <div className="card__title">
+                        <div>
+                            <h4 className="card__heading">Men Slim Fit Shirt</h4>
+                            <small className="card__brand">Calvin Klein</small>
+                            <small className="card__rating">4.2<i class="fal fa-star"></i></small>
+                        </div>
+                        <i className="far fa-heart"></i>
+                    </div>
+                    <div className="card__price">
+                        <p className="price__present">$500</p>
+                        <p className="price__original">$1999</p>
+                        <p className="price__discount">(75% OFF)</p>
                     </div>
                 </div>
                 <button>Add to Cart</button>
