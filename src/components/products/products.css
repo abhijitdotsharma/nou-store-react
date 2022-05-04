@@ -1,11 +1,12 @@
-/* Products*/
 .products-wrapper{
-    height: 100vh;
-    width: auto;
-    margin: auto;
-    margin-top: 4rem;
-    margin-left: 18rem;
+  height: 100vh;
+  width: auto;
+  margin: auto;
+  margin-top: 4rem;
+  margin-left: 18rem;
 }
+/* Products*/
+/* 
 
 .products-wrapper{
     display: flex;
@@ -44,6 +45,7 @@
   }
   
   /*card content*/
+  /*
   .card-info {
     display: flex;
     flex-direction: column;
@@ -80,7 +82,7 @@
   .card button {
     border: none;
     background-color: var(--black);
-    color: var(--white); /*white here give better contrast compared to --color-white*/
+    color: var(--white); 
     margin: 0.2rem 0.4rem;
     margin-bottom: 0.6rem;
     padding: 0.5rem 1rem;
@@ -95,3 +97,4 @@
     margin-left: 16rem; 
   }
 }
+*/
