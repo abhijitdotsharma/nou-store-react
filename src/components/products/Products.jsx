@@ -1,13 +1,8 @@
 import "./products.css";
-import axios from 'axios';
-import {useState, useEffect} from 'react';
-import { useProduct } from "../../context/product-context";
 import { ProductCard} from "./ProductCard";
 
-export default function Products() {
-
-    const {products} = useProduct();    
-
+export default function Products(props) {
+    const {products} = props;
     return (
         <section class="products-wrapper">
             {/* loads products on component load */}
