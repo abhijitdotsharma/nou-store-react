@@ -1,12 +1,6 @@
-//I will take a product detail prop from Products.jsx and render is beautifully
+//I will take a product detail prop from Products.jsx and render it
 
 const ProductCard = ({ product }) => {
-    // photo:
-    // title:
-    // author:
-    // price:
-    // categoryName:
-
     return (
         <>
             <div className="card">
@@ -14,7 +8,7 @@ const ProductCard = ({ product }) => {
                     <img src={`${product.photo}`} alt="some pic" />
                     <span className="card__badge">Limited</span>
                 </div>
-                {/* <div className="card__info">
+                <div className="card__info">
                     <div className="card__title">
                         <div>
                             <h4 className="card__heading">{product.title}</h4>
@@ -28,22 +22,7 @@ const ProductCard = ({ product }) => {
                         <p className="price__original">YYY</p>
                         <p className="price__discount">75%</p>
                     </div>
-                </div> */}
-                <div className="card__info">
-                    <div className="card__title">
-                        <div>
-                            <h4 className="card__heading">Men Slim Fit Shirt</h4>
-                            <small className="card__brand">Calvin Klein</small>
-                            <small className="card__rating">4.2<i class="fal fa-star"></i></small>
-                        </div>
-                        <i className="far fa-heart"></i>
-                    </div>
-                    <div className="card__price">
-                        <p className="price__present">$500</p>
-                        <p className="price__original">$1999</p>
-                        <p className="price__discount">(75% OFF)</p>
-                    </div>
-                </div>
+                </div>                
                 <button>Add to Cart</button>
             </div>
         </>
