@@ -78,13 +78,13 @@ export default function ProductPage(){
         //return product.rating > rating
         if(rating === null) return [...products];
 
-        const rateFilteredProducts = products.filter(product => product.rating > rating)
+        const rateFilteredProducts = products.filter(product => product.rating >= rating)
         return rateFilteredProducts;
     }
 
     const getSliderProducts = (products, sliderValue) => {
         if(sliderValue === 5000 || sliderValue === "CLEAR SLIDER") return [...products]
-        //return products upto sliderValue 0-sliderValue
+        //return products upto sliderValue i.e 0-sliderValue
         const sliderFilteredProducts = products.filter(product => Number(product.price) < Number(sliderValue))
         return sliderFilteredProducts;
     }
