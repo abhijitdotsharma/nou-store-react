@@ -3,6 +3,7 @@ import { ProductCard} from "./ProductCard";
 
 export default function Products(props) {
     const {products} = props;
+    
     return (
         <section class="products-wrapper">
             {/* loads products on component load */}
