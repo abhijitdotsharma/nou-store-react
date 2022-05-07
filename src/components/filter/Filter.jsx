@@ -4,14 +4,13 @@ import { useState } from "react";
 
 export default function Filter({ filterDispatch, sliderValue, productState}) {
 
-    const RATING = ['4star', '3star', '2star', '1star'];
 
     const [clearSliderBtn, setClearSliderBtn] = useState(false);
 
     const clearFilters = (e) => {
         //dispatch CLEAR to reducer
         filterDispatch({type: "CLEAR"})
-        //and remove clear btn from slider too
+        //and remove clear btn from slider 
         setClearSliderBtn(false)
     }
 
