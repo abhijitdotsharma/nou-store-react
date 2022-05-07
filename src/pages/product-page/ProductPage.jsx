@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import { Filter, NavigationTop, Products } from "../../components";
 import { useProduct } from "../../context/product-context";
-import { productReducer } from "../../reducer/filterReducer";
+import { filterReducer } from "../../reducer/filterReducer";
 import { getSliderProducts,getCategoryProducts, getRatedProducts, getFinalFilteredProducts } from "../../reducer/utilities";
 
 export default function ProductPage(){
@@ -13,7 +13,7 @@ export default function ProductPage(){
         rating: null,
         slider: 5000,
     }
-    const [filterState, filterDispatch] = useReducer(productReducer, initialFilterState)
+    const [filterState, filterDispatch] = useReducer(filterReducer, initialFilterState)
     
     const sliderProducts = getSliderProducts(products, filterState.slider)
     const ratedProducts = getRatedProducts(sliderProducts, filterState.rating)
