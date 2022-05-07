@@ -4,15 +4,7 @@ import { useEffect, useState, useContext, createContext } from "react";
 const ProductContext = createContext();
 
 const ProductProvider = ({children}) => {
-    const [products, setProducts] = useState([
-        // {
-        //     _id: 1,
-        //     title: "My book",
-        //     author: "Abhijit",
-        //     price: "1000",
-        //     categoryName: "dummy",
-        // },
-    ]);
+    const [products, setProducts] = useState([]);
 
     useEffect(()=>{
         (async () => {
