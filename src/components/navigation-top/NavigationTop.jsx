@@ -10,10 +10,11 @@ export default function NavigationTop(){
           <a href="./files/wishlist.html">
             <i className="fal fa-heart wishlist"></i>
           </a>
-          <a href="./files/cart.html">
+          <Link to='/cart'>
             <i className="fal fa-shopping-cart cart">Cart
             </i>
-          </a>
+          </Link>
+          
         </div>
     </nav>
     )
