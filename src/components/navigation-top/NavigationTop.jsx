@@ -1,8 +1,9 @@
-import "./navigation-top.css"
+import "./navigation-top.css";
+import { Link } from "react-router-dom";
 export default function NavigationTop(){
     return(
     <nav className="navbar">
-        <a className="nav-heading" href="#">NOU Store</a>
+        <Link className="nav-heading" to="/">NOU Store</Link>
         <input className="nav-input" type="text" placeholder="Search from a range of merch" />
         <div className="nav-right">
           <a className="nav-btn" href="./files/login.html">Login</a>

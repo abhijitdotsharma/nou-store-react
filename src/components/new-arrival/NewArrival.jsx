@@ -1,4 +1,5 @@
-import "./new-arrival.css"
+import {Link} from "react-router-dom";
+import "./new-arrival.css";
 
 export default function NewArrival() {
     return (
@@ -15,6 +16,12 @@ export default function NewArrival() {
                     </p>
                     <a href="./files/product-page.html">Check it Out</a>
                 </div>
+            </div>
+            <div>
+                <Link to="/mock"><button>Mockman</button> </Link>
+            </div>
+            <div>
+                
             </div>
         </section>
     )
