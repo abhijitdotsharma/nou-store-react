@@ -28,18 +28,19 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
             <div class="filter-container">
                 <div class="filter">
                     <h3>Filter</h3>
-                    <span onClick={() => clearFilters()}>Clear</span>
+                    <span onClick={clearFilters}>Clear</span>
                 </div>
 
                 <div class="price">
                     <h3>Price</h3>
                     <div class="slider">
-                        {clearSliderBtn && <button onClick={() => filterDispatchAndHideClear()}>clear</button>}
+                        {clearSliderBtn && <button onClick={filterDispatchAndHideClear}>clear</button>}
                         <label>
                             <input
                                 type="range"
                                 min="0"
                                 max="5000"
+                                value={sliderValue}
                                 onChange={(e) => filterDispatchAndToggleClear(e)}
                             />
                             {sliderValue}
@@ -49,7 +50,7 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
 
                 <div class="category">
                     <h3>Category</h3>
-                    <label for="">
+                    <label>
                         <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('boots')}
                         onInput={(e) => filterDispatch({type: "CATEGORY", payload: 'boots'})}
@@ -57,14 +58,14 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                         />
                         boots
                     </label>
-                    <label for="">
+                    <label>
                         <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('shirt')}
                         onInput={(e) => filterDispatch({type: "CATEGORY", payload: 'shirt'})}
                         />
                         shirt
                     </label>
-                    <label for="">
+                    <label>
                         <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('ball')}
                         onInput={(e) => filterDispatch({type: "CATEGORY", payload: 'ball'})}
@@ -76,29 +77,28 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                 <div class="rating">
                     {/* use RATING array later */}
                     <h3>Rating</h3>
-                    <label class="block" for="">
+                    <label class="block">
                         <input class="vertical-align-radio" type="radio" name="rating"
                         onChange={() => filterDispatch({type: "RATING", payload: '4'})}
                         checked={productState.rating === '4'} //what happens if I send payload: integer 4?
                         />
                         4 stars and above
-                    </label>
-                    {console.log("productState.rating: ", productState.rating)}
-                    <label class="block" for="">
+                    </label>                    
+                    <label class="block">
                         <input class="vertical-align-radio" type="radio" name="rating" id="" 
                         onChange={() => filterDispatch({type: "RATING", payload: '3'})}
                         checked={productState.rating === '3'}
                         />
                         3 stars and above
                     </label>
-                    <label class="block" for="">
+                    <label class="block">
                         <input class="vertical-align-radio" type="radio" name="rating" id=""
                         onChange={() => filterDispatch({type: "RATING", payload: '2'})}
                         checked={productState.rating === '2'}
                         />
                         2 stars and above
                     </label>
-                    <label class="block" for="">
+                    <label class="block">
                         <input class="vertical-align-radio" type="radio" name="rating" id="" 
                         onChange={() => filterDispatch({type: "RATING", payload: '1'})}
                         checked={productState.rating === '1'}
@@ -109,7 +109,7 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
 
                 <div class="sort">
                     <h3>Sort by</h3>
-                    <label class="block" for="">
+                    <label class="block">
                         <input
                             class="vertical-align-radio"
                             type="radio" name="sort" id=""
@@ -118,7 +118,7 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                         />
                         Price - High to Low
                     </label>
-                    <label class="block" for="">
+                    <label class="block">
                         <input
                             class="vertical-align-radio"
                             type="radio" name="sort" id=""
