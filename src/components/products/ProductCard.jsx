@@ -1,6 +1,8 @@
 //I will take a product detail prop from Products.jsx and render it
+import { useCart} from "../../context/cart-context";
 
 const ProductCard = ({ product }) => {
+    const {addToCart} = useCart();
     return (
         <>
             <div className="card">
@@ -23,7 +25,7 @@ const ProductCard = ({ product }) => {
                         <p className="price__discount">75%</p>
                     </div>
                 </div>                
-                <button>Add to Cart</button>
+                <button onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
         </>
     )
