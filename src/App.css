@@ -1,1 +1,21 @@
 @import url("./styles/root.css");
+
+.mockman{
+    display: flex;
+}
+
+.request-wrapper{
+    width: 45%;
+    height: 80vh;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.response-wrapper{
+    width: 45%;
+    height: 80vh;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+}
