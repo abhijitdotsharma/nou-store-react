@@ -53,7 +53,7 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                     <label>
                         <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('boots')}
-                        onInput={(e) => filterDispatch({type: "CATEGORY", payload: 'boots'})}
+                        onChange={(e) => filterDispatch({type: "CATEGORY", payload: 'boots'})}
 
                         />
                         boots
@@ -61,14 +61,14 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                     <label>
                         <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('shirt')}
-                        onInput={(e) => filterDispatch({type: "CATEGORY", payload: 'shirt'})}
+                        onChange={(e) => filterDispatch({type: "CATEGORY", payload: 'shirt'})}
                         />
                         shirt
                     </label>
                     <label>
                         <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('ball')}
-                        onInput={(e) => filterDispatch({type: "CATEGORY", payload: 'ball'})}
+                        onChange={(e) => filterDispatch({type: "CATEGORY", payload: 'ball'})}
                         />
                         ball
                     </label>
