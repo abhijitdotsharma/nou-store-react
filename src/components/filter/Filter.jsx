@@ -1,5 +1,4 @@
 import "./filter.css"
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function Filter({ filterDispatch, sliderValue, productState}) {
@@ -24,16 +23,16 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
     }
 
     return (
-        <aside class="filter-wrapper">
-            <div class="filter-container">
-                <div class="filter">
+        <aside className="filter-wrapper">
+            <div className="filter-container">
+                <div className="filter">
                     <h3>Filter</h3>
                     <span onClick={clearFilters}>Clear</span>
                 </div>
 
-                <div class="price">
+                <div className="price">
                     <h3>Price</h3>
-                    <div class="slider">
+                    <div className="slider">
                         {clearSliderBtn && <button onClick={filterDispatchAndHideClear}>clear</button>}
                         <label>
                             <input
@@ -48,10 +47,10 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                     </div>
                 </div>
 
-                <div class="category">
+                <div className="category">
                     <h3>Category</h3>
                     <label>
-                        <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
+                        <input className="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('boots')}
                         onChange={(e) => filterDispatch({type: "CATEGORY", payload: 'boots'})}
 
@@ -59,14 +58,14 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                         boots
                     </label>
                     <label>
-                        <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
+                        <input className="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('shirt')}
                         onChange={(e) => filterDispatch({type: "CATEGORY", payload: 'shirt'})}
                         />
                         shirt
                     </label>
                     <label>
-                        <input class="vertical-align-checkbox" type="checkbox" name="Men" id=""
+                        <input className="vertical-align-checkbox" type="checkbox" name="Men" id=""
                         checked={productState.category.includes('ball')}
                         onChange={(e) => filterDispatch({type: "CATEGORY", payload: 'ball'})}
                         />
@@ -74,32 +73,32 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                     </label>
                 </div>
 
-                <div class="rating">
+                <div className="rating">
                     {/* use RATING array later */}
                     <h3>Rating</h3>
-                    <label class="block">
-                        <input class="vertical-align-radio" type="radio" name="rating"
+                    <label className="block">
+                        <input className="vertical-align-radio" type="radio" name="rating"
                         onChange={() => filterDispatch({type: "RATING", payload: '4'})}
                         checked={productState.rating === '4'} //what happens if I send payload: integer 4?
                         />
                         4 stars and above
                     </label>                    
-                    <label class="block">
-                        <input class="vertical-align-radio" type="radio" name="rating" id="" 
+                    <label className="block">
+                        <input className="vertical-align-radio" type="radio" name="rating" id="" 
                         onChange={() => filterDispatch({type: "RATING", payload: '3'})}
                         checked={productState.rating === '3'}
                         />
                         3 stars and above
                     </label>
-                    <label class="block">
-                        <input class="vertical-align-radio" type="radio" name="rating" id=""
+                    <label className="block">
+                        <input className="vertical-align-radio" type="radio" name="rating" id=""
                         onChange={() => filterDispatch({type: "RATING", payload: '2'})}
                         checked={productState.rating === '2'}
                         />
                         2 stars and above
                     </label>
-                    <label class="block">
-                        <input class="vertical-align-radio" type="radio" name="rating" id="" 
+                    <label className="block">
+                        <input className="vertical-align-radio" type="radio" name="rating" id="" 
                         onChange={() => filterDispatch({type: "RATING", payload: '1'})}
                         checked={productState.rating === '1'}
                         />
@@ -107,20 +106,20 @@ export default function Filter({ filterDispatch, sliderValue, productState}) {
                     </label>
                 </div>
 
-                <div class="sort">
+                <div className="sort">
                     <h3>Sort by</h3>
-                    <label class="block">
+                    <label className="block">
                         <input
-                            class="vertical-align-radio"
+                            className="vertical-align-radio"
                             type="radio" name="sort" id=""
                             onChange={() => filterDispatch({ type: "HIGH_TO_LOW" })}
                             checked={productState.sortBy === "HIGH_TO_LOW"}
                         />
                         Price - High to Low
                     </label>
-                    <label class="block">
+                    <label className="block">
                         <input
-                            class="vertical-align-radio"
+                            className="vertical-align-radio"
                             type="radio" name="sort" id=""
                             onChange={() => filterDispatch({type: "LOW_TO_HIGH"})}
                             checked={productState.sortBy === "LOW_TO_HIGH"}
