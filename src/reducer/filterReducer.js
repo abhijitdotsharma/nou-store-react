@@ -1,4 +1,4 @@
-function filterReducer(state, {type, payload}){
+function filterReducer(state, { type, payload }) {
     switch (type) {
         case "CLEAR":
             return {
@@ -9,9 +9,9 @@ function filterReducer(state, {type, payload}){
                 slider: 5000,
             }
         case "HIGH_TO_LOW":
-            return {...state, sortBy: "HIGH_TO_LOW"};
+            return { ...state, sortBy: "HIGH_TO_LOW" };
         case "LOW_TO_HIGH":
-            return {...state, sortBy: "LOW_TO_HIGH"};
+            return { ...state, sortBy: "LOW_TO_HIGH" };
 
         case "CATEGORY":
             //type: CATEGORY, payload: 'boots' or 'ball'...
@@ -20,8 +20,8 @@ function filterReducer(state, {type, payload}){
                 category: [
                     //if categoryArray includes payload, return categoryArray without payloadCategory
                     //else add the payloadCategory to the caregoryArray
-                    ...state.category.includes(payload)? [...state.category.filter(item => item !== payload)] 
-                    : [...state.category, payload]
+                    ...state.category.includes(payload) ? [...state.category.filter(item => item !== payload)]
+                        : [...state.category, payload]
                 ]
             }
         case "RATING":
@@ -30,7 +30,7 @@ function filterReducer(state, {type, payload}){
                 ...state,
                 rating: payload,
             }
-            
+
         case "SLIDER":
             //payload: e.target.value from FilterComponent
             return {
@@ -42,4 +42,4 @@ function filterReducer(state, {type, payload}){
     }
 }
 
-export {filterReducer}
+export { filterReducer }
