@@ -25,7 +25,6 @@ function filterReducer(state, {type, payload}){
                 ]
             }
         case "RATING":
-            console.log("Rating is: ", payload)
             //payload: rating - 4, or3, or2
             return {
                 ...state,
