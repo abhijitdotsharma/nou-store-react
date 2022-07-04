@@ -73,7 +73,7 @@ const CartPage = () => {
             <NavigationTop />
             <CartProducts cart={cart} />
             <button
-                style={{ position: "fixed", right: '1rem', top: '8rem' }}
+                style={{ position: "fixed", right: '4.5rem', top: '8rem' }}
                 onClick={clearCart}
             >Clear Cart
             </button>
