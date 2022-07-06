@@ -1,13 +1,9 @@
 //I will take a product detail prop from Products.jsx and render it
 import { useCart } from "../../context/cart-context";
+import { getDiscountOfProduct } from "../utilities/getDiscountOfProduct";
 
 const ProductCard = ({ product }) => {
-    const { addToCart } = useCart();
-
-    function getDiscountOfProduct(price, originalPrice) {
-        //discPercent = originalPrice - sellingPrice / originalPrice * 100
-        return parseInt(((Number(originalPrice) - Number(price)) / Number(originalPrice)) * 100)
-    }
+    const { addToCart,addToWishlist } = useCart();
 
     let discount = getDiscountOfProduct(product.price, product.originalPrice)
     return (
@@ -24,7 +20,10 @@ const ProductCard = ({ product }) => {
                             <small className="card__brand">{product.author}</small>
                             <small className="card__rating">{product.rating}<i className="fal fa-star"></i></small>
                         </div>
-                        <i className="far fa-heart"></i>
+                        <i 
+                        onClick={() => addToWishlist(product)}
+                        className="far fa-heart"
+                        ></i>
                     </div>
                     <div className="card__price">
                         <p className="price__present">{product.price}</p>
