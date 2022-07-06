@@ -6,7 +6,8 @@ const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState({
         cartCount: 0,
-        cartItems: []
+        cartItems: [],
+        wishlist: [],
     });
 
     function addToCart(product) {
@@ -87,9 +88,39 @@ const CartProvider = ({ children }) => {
         setCart(prev => ({ ...prev, cartCount: 0, cartItems: [] }))
     }
 
+    function addToWishlist(product) {
+        setCart(prev => {
+
+            //only add if product not on wishlist, found - true if product already exists
+            const found = prev.wishlist.some(productObj => productObj.id === product.id)
+
+            //new product addition, add to wishlist
+            if(!found){
+                return {
+                    ...prev,
+                    wishlist: [...prev.wishlist, {...product}]
+                }
+            }
+
+            //product already on wishlist
+            return prev;
+        })
+    }
+
+    function removeFromWishlist(productId){
+        //filter and remove the product in wishlist, return the updated array
+        setCart(prev => {
+            return {
+                ...prev,
+                wishlist: [
+                    ...prev.wishlist.filter(product => product.id !== productId)
+                ]
+            }
+        })
+    }
 
     return (
-        <CartContext.Provider value={{ addToCart, cart, clearCart, removeFromCart, decreaseProductCountInCart }}>
+        <CartContext.Provider value={{ addToCart, cart, clearCart, removeFromCart, decreaseProductCountInCart, addToWishlist, removeFromWishlist}}>
             {children}
         </CartContext.Provider>
     )
