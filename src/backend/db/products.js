@@ -86,5 +86,15 @@ export const products = [
     rating: 0.5,
     categoryName: "shirt",
   },
+  {
+    _id: uuid(),
+    photo: "https://picsum.photos/400/200",
+    title: "jersey 3",
+    author: "adidas",
+    price: "400",
+    originalPrice: "300",
+    rating: 0.3,
+    categoryName: "shirt",
+  },
   
 ];
