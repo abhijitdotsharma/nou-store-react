@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./new-arrival.css";
 
 export default function NewArrival() {
@@ -14,14 +14,15 @@ export default function NewArrival() {
                     <p>Our latest collection of on and
                         off-the-field merch.
                     </p>
-                    <a href="./files/product-page.html">Check it Out</a>
+                    <Link
+                        to="/products"
+                        className="new-arrival-btn"
+                    >Check it out</Link>
+
                 </div>
             </div>
             <div>
-                <Link to="/mock"><button>Mockman</button> </Link>
-            </div>
-            <div>
-                
+
             </div>
         </section>
     )
