@@ -3,12 +3,12 @@ import "./new-arrival.css";
 
 export default function NewArrival() {
     return (
-        <section class="new-arrival-section">
-            <div class="new-arrival-card">
-                <div class="new-arrival-image">
+        <section className="new-arrival-section">
+            <div className="new-arrival-card">
+                <div className="new-arrival-image">
                     <img src="https://picsum.photos/500" alt="New Arrival" />
                 </div>
-                <div class="new-arrival-content">
+                <div className="new-arrival-content">
                     <span>Recently Launched</span>
                     <h3>Spring 2022 Collection</h3>
                     <p>Our latest collection of on and

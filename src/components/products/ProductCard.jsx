@@ -1,6 +1,15 @@
 //I will take a product detail prop from Products.jsx and render it
+import { useCart } from "../../context/cart-context";
 
 const ProductCard = ({ product }) => {
+    const { addToCart } = useCart();
+
+    function getDiscountOfProduct(price, originalPrice) {
+        //discPercent = originalPrice - sellingPrice / originalPrice * 100
+        return parseInt(((Number(originalPrice) - Number(price)) / Number(originalPrice)) * 100)
+    }
+
+    let discount = getDiscountOfProduct(product.price, product.originalPrice)
     return (
         <>
             <div className="card">
@@ -13,17 +22,17 @@ const ProductCard = ({ product }) => {
                         <div>
                             <h4 className="card__heading">{product.title}</h4>
                             <small className="card__brand">{product.author}</small>
-                            <small className="card__rating">{product.rating}<i class="fal fa-star"></i></small>
+                            <small className="card__rating">{product.rating}<i className="fal fa-star"></i></small>
                         </div>
                         <i className="far fa-heart"></i>
                     </div>
                     <div className="card__price">
                         <p className="price__present">{product.price}</p>
-                        <p className="price__original">YYY</p>
-                        <p className="price__discount">75%</p>
+                        <p className="price__original">{product.originalPrice}</p>
+                        <p className="price__discount">{`${discount}%`}</p>
                     </div>
-                </div>                
-                <button>Add to Cart</button>
+                </div>
+                <button onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
         </>
     )
