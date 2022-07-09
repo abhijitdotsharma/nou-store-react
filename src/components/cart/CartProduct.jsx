@@ -1,15 +1,12 @@
 import "./cart-product.css";
 import { useCart } from "../../context/cart-context";
+import { getDiscountOfProduct } from "../utilities/getDiscountOfProduct";
+
 const CartProduct = ({ product }) => {
 
     const { addToCart, removeFromCart, decreaseProductCountInCart } = useCart();
 
-    function getDiscountOfProduct(price, originalPrice) {
-        //discPercent = originalPrice - sellingPrice / originalPrice * 100
-        return parseInt(((Number(originalPrice) - Number(price)) / Number(originalPrice)) * 100)
-    }
-
-    let discount = getDiscountOfProduct(product.price, product.originalPrice)
+    let discount = getDiscountOfProduct(product.price, product.originalPrice);
 
     return (
         <div className="cart-card">

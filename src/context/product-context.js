@@ -10,7 +10,6 @@ const ProductProvider = ({children}) => {
         (async () => {
             const {data} = await axios.get("/api/products/");
             const resProducts = data.products;
-
             setProducts(resProducts);
         })();
     }, [])

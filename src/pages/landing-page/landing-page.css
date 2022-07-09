@@ -43,36 +43,4 @@
     object-fit: cover;
 }
 
-/*new arrival card*/
-.new-arrival-card{
-    margin: auto;
-    margin-top: 2rem;
-    width: 90%;
-    display: flex;
-    justify-content: flex-start;
-    /*used margin auto on content div*/
-    align-items: center;
-}
 
-.new-arrival-image{
-    width: 30%;
-}
-
-.new-arrival-image img{
-    width: 100%;
-    object-fit: cover;
-}
-
-.new-arrival-content{
-    margin: 0 auto;
-}
-
-.new-arrival-content a{
-    border: 0.5px solid var(--color-primary);
-    color: var(--color-primary);
-    padding: 0.5rem 2rem;
-}
-
-.new-arrival-content a:hover{
-    border-color: var(--color-black);
-}

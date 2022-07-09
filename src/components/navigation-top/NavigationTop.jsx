@@ -7,9 +7,9 @@ export default function NavigationTop(){
         <input className="nav-input" type="text" placeholder="Search from a range of merch" />
         <div className="nav-right">
           <a className="nav-btn" href="./files/login.html">Login</a>
-          <a href="./files/wishlist.html">
+          <Link to="/wishlist">
             <i className="fal fa-heart wishlist"></i>
-          </a>
+          </Link>
           <Link to='/cart'>
             <i className="fal fa-shopping-cart cart">Cart
             </i>
