@@ -24,7 +24,6 @@ export default function LoginPage() {
         setUser(prev => ({ ...prev, password: password }))
     }
 
-
     async function loginHandler() {
         try {
             //send login credentials to server
@@ -51,6 +50,38 @@ export default function LoginPage() {
         }
 
     }
+
+    const guest = {
+        email: "abhijit@gmail.com",
+        password: "abhijit",
+    };
+
+    async function guestLoginHandler(){
+        try {
+            //send login credentials to server
+            const response = await axios.post(`/api/auth/login`, {
+                email: guest.email,
+                password: guest.password
+            })
+
+            //responseFromServerCheck()
+            //if loggedIn, setIsLoggedIn to true and navigate to were you came from
+            if (response?.request?.status === 200) {
+                console.log("I am in: isLoggedIn inside - ", isLoggedIn)
+
+                localStorage.setItem("userSignedInStatus", true);
+                setIsLoggedIn(prev => prev = true);
+                navigate(location?.state?.from?.pathname, {replace: true})
+            }
+
+            // save encodedToken in localstorage, used in accessing private routes
+            localStorage.setItem("token", response?.data?.encodedToken)
+
+        } catch (error) {
+            console.log("err is: ", error)
+        }
+    }
+
 
     return (
         <>
@@ -86,6 +117,9 @@ export default function LoginPage() {
                         onClick={loginHandler}
                     >Login</button>
 
+                    <button
+                        onClick={guestLoginHandler}
+                    >Guest Login</button>
                     <Link to="/signup">Create New Account - </Link>
                 </div>
             </div>
