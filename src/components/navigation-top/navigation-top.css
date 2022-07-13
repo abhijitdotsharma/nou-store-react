@@ -39,6 +39,7 @@
 }
 .nav-btn.logout{
   background-color: var(--color-logout);
+  margin-bottom: none;
 }
 .nav-btn:hover{
   cursor: pointer;

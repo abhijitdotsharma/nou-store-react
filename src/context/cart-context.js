@@ -1,6 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import axios from "axios";
+
+import { createContext, useContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
+
 
 const CartProvider = ({ children }) => {
 
@@ -9,6 +12,38 @@ const CartProvider = ({ children }) => {
         cartItems: [],
         wishlist: [],
     });
+
+    const encodedToken = localStorage.getItem("token");
+
+    //get cart from server on page load
+    useEffect(() => {
+        (async function fetchCartFromServer(){
+            try{
+                const response = await axios.get(`/api/user/cart`, {
+                    headers: {
+                        authorization: encodedToken
+                    },
+                });
+    
+                console.log("cartFromServer: ", response.data.cart.length)
+    
+                const cartFromServer = response.data.cart;
+                setCart(prev => {
+                    return {
+                        ...prev,
+                        cartCount: prev.cartCount + cartFromServer.length,
+                        cartItems: [...prev.cartItems, ...cartFromServer] //cartFromServer is an array, so spread 
+                    }
+                })
+            }catch(error){
+                console.log("err ", error)
+            }
+        })();
+
+    }, [])
+
+    
+    
 
     function addToCart(product) {
         //if product.id not on cart.cartItems, add it 
@@ -23,7 +58,7 @@ const CartProvider = ({ children }) => {
                     cartCount: prev.cartCount + 1,
                     cartItems: [...prev.cartItems, { ...product, productCount: 1 }]
                 }
-                // cartItems: [...prev.cartItems, {...product, productCount: 1}] -> put everything from product to cart.cartItems and add productCount: 1
+                //put everything from product to cart.cartItems and add productCount: 1
             }
 
             //product already in cart, increase cartCount and productCount
@@ -45,7 +80,7 @@ const CartProvider = ({ children }) => {
     //remove an item from cart.cartItems based on its id
     function removeFromCart(productId) {
         setCart(prev => {
-            //find the item that I want to remove i.e cartItems.productObj.id
+            //find the item to remove i.e cartItems.productObj.id
             //return updated cartItems, with all except productId -- using filter        
 
             //productCount of productId object -> to decrease cartCount
