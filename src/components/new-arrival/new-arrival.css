@@ -4,17 +4,17 @@
     margin-top: 2rem;
     width: 90%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     /*used margin auto on content div*/
     align-items: center;
 }
 
 .new-arrival-image{
-    width: 30%;
+    width: 30%; 
 }
 
 .new-arrival-image img{
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -33,4 +33,18 @@
 
 .new-arrival-content a:hover{
     border-color: var(--color-black);
+}
+
+@media screen and (max-width: 620px) {
+    /* NewArrival.jsx */
+    .new-arrival-card{
+        flex-direction: column;
+    }
+    .new-arrival-image{
+        width: 50%;
+    }
+    .new-arrival-content{
+        width: 60%;
+        text-align: center;
+    }  
 }
