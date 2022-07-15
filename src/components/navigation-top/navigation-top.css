@@ -1,20 +1,25 @@
 .navbar {
     width: 100%;
     background-color: var(--color-black);
-    padding: 1rem 1.5rem;
+    padding: 1rem 4rem;
     border-bottom: 0.3px solid var(--white);
-    position: fixed;
+    /* position: fixed; */
     z-index: 1;
     left: 0;
     top: 0;
     /*set margin on divs below nav, nav eats content below it*/
 
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     
+}
+
+.nav-items{
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
 }
 
 .nav-right {
@@ -46,13 +51,55 @@
 }
 .nav-input
 { 
-  width: 40%;
+  max-width: 80%;
   padding: 0.5rem 1.5rem;
   color: var(--color-black);
+}
+
+.ham-btn{
+  display: none;
 }
 
 /* Input and its placeholder must have matching font styles*/
 input,
 input::-webkit-input-placeholder{
     font-size: normal;
+}
+
+@media screen and (max-width: 620px) {
+  .nav-items {
+    display: block;
+    position: absolute;
+    left: -110vw;
+    transition: all 0.7s ease-in-out;
+    top: 4.7rem;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    background-color: cadetblue;
+
+    margin: 1 auto;
+    padding: 3rem 0;
+  }
+
+  .active{
+    left: 0;
+    transition: all 0.7s ease-in-out;
+  }
+
+  .nav-input{
+    width: 70%;
+    margin: auto;
+  }
+
+  .nav-right{
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+
+  .ham-btn{
+    display: block;
+  }
+
 }
