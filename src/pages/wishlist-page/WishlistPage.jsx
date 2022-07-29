@@ -10,7 +10,7 @@ export default function WishlistPage() {
         <div>
             <NavigationTop />
             <section className="wishlist-wrapper">
-                <h2>My <span style={{ color: "purple" }}>Wishlist</span> ::: </h2>
+                <h2>My <span style={{ color: "#9760d6" }}>Wishlist</span> ::: </h2>
                 <Wishlists wishlist={cart.wishlist}/>
             </section>
         </div>
