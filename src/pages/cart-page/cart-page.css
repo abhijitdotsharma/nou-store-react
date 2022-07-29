@@ -1,18 +1,15 @@
 
-
 /* checkout */
 .checkout{
-    position: fixed;
-    right: 5vw;
-    top: 6rem;
+    width: 28rem;
+    height: 24rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+    /* margin-left: 55vw; */
 }
 .checkout{
-    margin-left: 1rem;
-    margin-top: 5rem;
     border: 1px solid var(--black);
     background-color: var(--color-blue);
-    width: 300px;
-    height: 440px;
     padding: 2rem;
 }
 
@@ -21,6 +18,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 1rem;
+    padding: 0.25rem 0;
 }
 
 .checkout-total{
@@ -36,3 +34,17 @@
     background-color: var(--black);
     color: var(--white);
 }
+
+.clear-cart-btn{
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: 700;
+}
+
+
+.checkout-modal-btn{
+    display: none;
+}
+
