@@ -1,10 +1,10 @@
 .navbar {
     width: 100%;
-    background-color: var(--color-black);
+    background-color: #3aafa9;
     padding: 1rem 4rem;
-    border-bottom: 0.3px solid var(--white);
-    /* position: fixed; */
-    z-index: 1;
+    border-bottom: 0;
+    position: fixed;
+    z-index: 4;
     left: 0;
     top: 0;
     /*set margin on divs below nav, nav eats content below it*/
@@ -29,13 +29,22 @@
     gap: 1rem;
 }
 
+
 .nav-right .wishlist,
             .cart{
     color: white;
 }
 
+.badge-notification{
+  font-size: smaller;
+  background-color: #000000;
+  top: -8px;
+  right: -8px;
+}
+
 .nav-heading{
   font-size: 1.5rem;
+  font-weight: 900;
 }
 
 .nav-btn{
@@ -44,7 +53,7 @@
 }
 .nav-btn.logout{
   background-color: var(--color-logout);
-  margin-bottom: none;
+  margin-bottom: 0;
 }
 .nav-btn:hover{
   cursor: pointer;
@@ -72,7 +81,7 @@ input::-webkit-input-placeholder{
     position: absolute;
     left: -110vw;
     transition: all 0.7s ease-in-out;
-    top: 4.7rem;
+    top: 4rem;
     width: 100vw;
     height: 100vh;
     padding: 2rem;
@@ -88,8 +97,9 @@ input::-webkit-input-placeholder{
   }
 
   .nav-input{
-    width: 70%;
-    margin: auto;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
   }
 
   .nav-right{
@@ -100,6 +110,9 @@ input::-webkit-input-placeholder{
 
   .ham-btn{
     display: block;
+  }
+  .ham-btn i{
+    color: var(--white);
   }
 
 }

@@ -1,6 +1,7 @@
 import "./navigation-top.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
+import { useCart } from "../../context/cart-context";
 import { useState } from "react";
 
 export default function NavigationTop() {
@@ -9,6 +10,7 @@ export default function NavigationTop() {
 
   const navigate = useNavigate();
   const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const {cart} = useCart();
 
   function logoutHandler() {
     // clean local storage
@@ -39,16 +41,17 @@ export default function NavigationTop() {
           <Link to="/wishlist">
             <i className="fal fa-heart wishlist"></i>
           </Link>
-          <Link to='/cart'>
-            <i className="fal fa-shopping-cart cart">Cart
+          <Link to='/cart' className="cart-badge">
+            <i className="fal fa-shopping-cart cart">
             </i>
+            <span class="badge-notification">{cart.cartCount}</span>
           </Link>
         </div>
       </div>
-      <button 
+      <div 
       className="ham-btn"
       onClick={() => setSidebarOn(prev => !prev)}
-      >###</button>
+      ><i class="fal fa-bars"></i></div>
     </nav>
   )
 }
