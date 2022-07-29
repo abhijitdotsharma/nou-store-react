@@ -16,7 +16,7 @@
   }
   
   .card {
-    background-color: var(--color-white);
+    background-color: white;
     width: 14rem;
     display: flex;
     flex-direction: column;
@@ -44,8 +44,7 @@
     padding: 0.1rem 0.4rem;
   }
   .card-remove {
-    font-weight: 500;
-    color: var(--color-primary-100); 
+    font-weight: 500; 
     position: absolute;
     right: 0.08rem;
     top: 1rem;
