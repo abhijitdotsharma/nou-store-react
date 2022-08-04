@@ -4,6 +4,8 @@ import "./cart-page.css";
 
 const CartSummary = ({ cart }) => {
 
+    const { clearCart } = useCart();
+
     // returns acc <- 0 + item1.price * item1.count on 1st iteration 
     const productCountReducer = (acc, curr) => acc + (Number(curr.price) * curr.productCount);
     function totalPriceOfItems() {
@@ -28,17 +30,9 @@ const CartSummary = ({ cart }) => {
     let totalSave = totalDiscount - deliveryCharge;
 
     return (
-        <div
-            className="checkout"
-            style={{
-                border: '1px solid black',
-                width: '280px',
-                height: '300px',
-            }}
-        >
-            <h3 className="checkout-heading">PRICE DETAILS</h3>
+        <div className= "checkout">
+            <h3 className="checkout-heading">PRICE DETAILS</h3> 
             <hr />
-
             <div className="checkout-price checkout-flex-row">
                 <p>Price <span>{`${cart.cartCount} Items`}</span></p>
                 <p>{totalPrice}</p>
@@ -58,6 +52,11 @@ const CartSummary = ({ cart }) => {
             </div>
             <hr />
             <p>You will save <span>{totalSave}</span> on this order</p>
+            <button
+                    className="clear-cart-btn"
+                    onClick={clearCart}
+                >Clear Cart
+            </button>
             <button className="checkout-btn">Place Order</button>
         </div>
     )
@@ -66,18 +65,15 @@ const CartSummary = ({ cart }) => {
 
 
 const CartPage = () => {
-    const { cart, clearCart } = useCart();
+    const { cart } = useCart();
 
     return (
         <div>
             <NavigationTop />
-            <CartProducts cart={cart} />
-            <button
-                style={{ position: "fixed", right: '4.5rem', top: '8rem' }}
-                onClick={clearCart}
-            >Clear Cart
-            </button>
-            <CartSummary cart={cart} />
+            <div className="cart-page">
+                <CartSummary cart={cart} />
+                <CartProducts cart={cart} />
+            </div>
         </div>
     )
 }

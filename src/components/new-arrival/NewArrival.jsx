@@ -3,11 +3,9 @@ import "./new-arrival.css";
 
 export default function NewArrival() {
     return (
-        <section className="new-arrival-section">
-            <div className="new-arrival-card">
-                <div className="new-arrival-image">
-                    <img src="https://picsum.photos/500" alt="New Arrival" />
-                </div>
+        <section className="new-arrival-card">
+            <div className="new-arrival-image">
+                <img src="https://res.cloudinary.com/wickedsharma/image/upload/v1658940816/nou-store/babies-above-footer_tutzxo.jpg" alt="New Arrival" />
                 <div className="new-arrival-content">
                     <span>Recently Launched</span>
                     <h3>Spring 2022 Collection</h3>
@@ -18,12 +16,9 @@ export default function NewArrival() {
                         to="/products"
                         className="new-arrival-btn"
                     >Check it out</Link>
-
                 </div>
             </div>
-            <div>
 
-            </div>
         </section>
     )
 }

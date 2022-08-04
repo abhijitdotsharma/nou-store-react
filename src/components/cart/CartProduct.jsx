@@ -18,7 +18,7 @@ const CartProduct = ({ product }) => {
             </div>
             <div className="cart-card-content">
                 <p className="cart-card-heading">{product.title}</p>
-                <div className="card-price">
+                <div className="cart-card-price">
                     <p className="disc-price">{`$${product.price}`}</p>
                     <p className="og-price">{`${product.originalPrice}`}</p>
                     <p className="disc-percent">{`${discount}% off`}</p>
@@ -39,10 +39,13 @@ const CartProduct = ({ product }) => {
                     ></i>
                 </div>
 
-                <button
+                <button 
+                    className="cart-card-btn"
                     onClick={() => removeFromCart(product.id)}
                 >Remove From Cart</button>
-                <button>Move to Wishlist</button>
+                <button
+                className="cart-card-btn"
+                >Move to Wishlist</button>
             </div>
         </div>
 
